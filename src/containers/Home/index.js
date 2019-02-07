@@ -1,18 +1,32 @@
 
 import React from 'react';
 import Header from '../../components/Header';
+import { connect } from 'react-redux';
 
-const Home = () => {
+const Home = (props) => {
 	return (
 		<div>
 			<Header />
-			<div>good lucky</div>
+			<div>this is {props.name}</div>
 			<button onClick={() => console.log('click')}>click</button>
 		</div>
 	)
 };
 
-export default Home;
-// module.exports = {
-// 	default: Home
-// };
+const mapStateToProps = state => ({
+	name: state.name
+});
+
+
+
+export default connect(mapStateToProps, null)(Home);
+
+
+
+
+
+
+
+
+
+
