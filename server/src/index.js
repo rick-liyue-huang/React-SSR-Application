@@ -7,6 +7,9 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 
 const app = express();
+
+app.use(express.static('./server/public'));
+
 const content = renderToString(<Home />);
 
 app.get('/', (req, res) => {
@@ -17,7 +20,8 @@ app.get('/', (req, res) => {
 				<meta charset="utf-8" />
 			</head>
 			<body>
-				${content}
+				<div id='root'>${content}</div>
+				<script src="/index.js"></script>
 			</body>
 		</html>
 	`);

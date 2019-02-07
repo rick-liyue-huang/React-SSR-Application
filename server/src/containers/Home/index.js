@@ -2,7 +2,12 @@
 import React from 'react';
 
 const Home = () => {
-	return <div>welcome to home</div>
+	return (
+		<div>
+			<div>good lucky</div>
+			<button onClick={() => console.log('click')}>click</button>
+		</div>
+	)
 };
 
 export default Home;
