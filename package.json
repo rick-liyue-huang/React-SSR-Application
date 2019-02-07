@@ -4,7 +4,7 @@
   "description": "talk about react ssr",
   "main": "index.js",
   "scripts": {
-    "dev:start": "nodemon --watch server/build --exec node \"./server/build/bundle.js\"",
+    "dev:start": "nodemon --watch server/build --exec node \"./build/bundle.js\"",
     "dev:build:server": "webpack --config webpack.server.js --watch",
     "dev:build:client": "webpack --config webpack.client.js --watch",
     "dev": "npm-run-all --parallel dev:**",
@@ -35,6 +35,7 @@
     "react-dom": "^16.8.1",
     "webpack": "^4.29.2",
     "webpack-cli": "^3.2.3",
+    "webpack-merge": "^4.2.1",
     "webpack-node-externals": "^1.7.2"
   }
 }
