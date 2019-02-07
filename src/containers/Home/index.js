@@ -1,9 +1,10 @@
 
-import React from 'react';
+import React, { Component } from 'react';
 import Header from '../../components/Header';
 import { connect } from 'react-redux';
+import { getHomeList } from './store/actions';
 
-const Home = (props) => {
+/*const Home = (props) => {
 	return (
 		<div>
 			<Header />
@@ -11,15 +12,36 @@ const Home = (props) => {
 			<button onClick={() => console.log('click')}>click</button>
 		</div>
 	)
-};
+};*/
+
+class Home extends Component {
+	render() {
+		return (
+			<div>
+				<Header />
+				<div>this is {this.props.name}</div>
+				<button onClick={() => console.log('click')}>click</button>
+			</div>
+		)
+	}
+
+	componentDidMount() {
+		this.props.getHomeList();
+	}
+}
 
 const mapStateToProps = state => ({
-	name: state.name
+	name: state.home.name
 });
 
+const mapDispatchToProps = dispatch => ({
+	getHomeList() {
+		// console.log('test');
+		dispatch(getHomeList());
+	}
+})
 
-
-export default connect(mapStateToProps, null)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 
 
