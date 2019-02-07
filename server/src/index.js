@@ -1,18 +1,37 @@
 
-var express = require('express');
-var app = express();
+// const express = require('express');
+// const Home = require('./containers/Home');
+import express from 'express';
+import Home from './containers/Home';
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+
+const app = express();
+const content = renderToString(<Home />);
 
 app.get('/', (req, res) => {
 	res.send(`
-		<html>
+		<html lang='en'>
 			<head>
-				<title>hh</title>
+				<title>react ssr</title>
+				<meta charset="utf-8" />
 			</head>
 			<body>
-				<h1>me</h1>
+				${content}
 			</body>
 		</html>
-	`)
+	`);
 });
 
 app.listen(3000);
+
+
+
+
+
+
+
+
+
+
+
