@@ -1,11 +1,25 @@
 
 import axios from 'axios';
+import { CHANGE_HOME_LIST } from './constants';
+
+const changeList = (list) => ({
+	type: CHANGE_HOME_LIST,
+	list
+});
 
 export const getHomeList = () => {
-	return () => {
-		axios.get('http://47.95.113.63/ssr/api/news.json?secret=PP87ANTIPIRATE')
+	return (dispatch) => {
+		return axios.get('http://47.95.113.63/ssr/api/news.json?secret=PP87ANTIPIRATE')
 			.then((res) => {
-				console.log(res);
+				const list = res.data.data;
+				// console.log(list);
+				dispatch(changeList(list));
 			});
 	}
 }
+
+
+
+
+
+
