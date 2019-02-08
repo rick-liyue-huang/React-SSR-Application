@@ -34,7 +34,10 @@ class Home extends Component {
 
 	// 这个方法只是在客户端执行，而不会在服务端执行
 	componentDidMount() {
-		this.props.getHomeList();
+		if(!this.props.list.length) {
+			this.props.getHomeList();
+		}
+		
 	}
 
 	getList() {

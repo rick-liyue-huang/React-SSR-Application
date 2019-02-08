@@ -10,12 +10,16 @@ const reducer = combineReducers({
 });
 
 // 防止单例模式
-const getStore = () => {
+export const getStore = () => {
 	return createStore(reducer, applyMiddleware(thunk));
+}
+export const getClientStore = () => {
+	const defaultState = window.context.state;
+	return createStore(reducer, defaultState, applyMiddleware(thunk));
 }
 // const store = createStore(reducer, applyMiddleware(thunk));
 
-export default getStore;
+// export default getStore;
 
 
 

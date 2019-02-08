@@ -2,7 +2,7 @@
 // const express = require('express');
 // const Home = require('./containers/Home');
 import express from 'express';
-import getStore from '../store';
+import { getStore } from '../store';
 import routes from '../Routes';
 import { matchRoutes } from 'react-router-config';
 

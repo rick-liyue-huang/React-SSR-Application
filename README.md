@@ -75,7 +75,7 @@ JS代码根据地址返回不同的路由内容
 5.store中的列表被更新
 6.客户端渲染出store中list数据对应的列表内容。
 
-数据的脱水和注水
+数据的脱水和注水window.context.state
 
 
 
