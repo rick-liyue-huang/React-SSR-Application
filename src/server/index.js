@@ -10,29 +10,18 @@ const Home = require('./containers/Home');
 */
 
 import express from 'express';
-import React from 'react';
+// encapsulate renders
+import { render } from './utils';
 // reactDOM in server
-import { renderToString } from 'react-dom/server';
-import Home from '../containers/Home';
+// import Home from '../containers/Home';
 
-const content = renderToString(<Home />);
 const app = express(); 
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-	res.send(`
-		<html>
-			<head>
-				<title>ok</title>
-			</head>
-			<body>
-				<div id='root'>${content}</div>
-				<!-- this is static file, which got from public dir -->
-				<script src='/index.js'></script>
-			</body>
-		</html>
-	`);
+app.get('*', (req, res) => {
+
+	res.send(render(req));
 });
 
 app.listen(3000, () => {
