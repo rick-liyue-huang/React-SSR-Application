@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar React = __webpack_require__(/*! react */ \"react\");\n\nvar Home = function Home() {\n  return React.createElement(\n    'div',\n    null,\n    'home'\n  );\n};\n\nmodule.exports = { default: Home };\n\n//# sourceURL=webpack:///./src/containers/Home/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Home = function Home() {\n  return _react2.default.createElement(\n    'div',\n    null,\n    'home'\n  );\n};\n\nexports.default = Home;\n\n//# sourceURL=webpack:///./src/containers/Home/index.js?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("\n\nvar React = __webpack_require__(/*! react */ \"react\");\n\nvar Home =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar express = __webpack_require__(/*! express */ \"express\");\nvar Home = __webpack_require__(/*! ./containers/Home */ \"./src/containers/Home/index.js\");\nvar app = express();\n\napp.get('/', function (req, res) {\n  res.send('<html>\\n      <head>\\n        <title>hello</title>\\n      </head>\\n      <body>\\n        <h1>first lesson</h1>\\n        <p>hello world</p>\\n      </body>\\n     </html>');\n});\n\nvar server = app.listen(3000);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _Home = __webpack_require__(/*! ./containers/Home */ \"./src/containers/Home/index.js\");\n\nvar _Home2 = _interopRequireDefault(_Home);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar app = (0, _express2.default)(); // reactdom for server\n\nvar content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));\n\napp.get('/', function (req, res) {\n  res.send('\\n    <html>\\n      <head>\\n        <title></title>\\n      </head>\\n      <body>\\n        ' + content + '\\n      </body>\\n    </html>\\n  ');\n});\n\nvar server = app.listen(3000);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -129,6 +129,17 @@ eval("module.exports = require(\"express\");\n\n//# sourceURL=webpack:///externa
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"react\");\n\n//# sourceURL=webpack:///external_%22react%22?");
+
+/***/ }),
+
+/***/ "react-dom/server":
+/*!***********************************!*\
+  !*** external "react-dom/server" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react-dom/server\");\n\n//# sourceURL=webpack:///external_%22react-dom/server%22?");
 
 /***/ })
 
