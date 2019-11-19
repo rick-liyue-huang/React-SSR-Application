@@ -1,5 +1,6 @@
 
 const express = require('express');
+const Home = require('./containers/Home');
 const app = express();
 
 app.get('/', (req, res) => {
