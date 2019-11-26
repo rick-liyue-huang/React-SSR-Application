@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "oldstart": "node ./build/bundle.js",
     "dev:start": "nodemon --watch build --exec node \"./build/bundle.js\"",
-    "dev:build": "webpack --config webpack.server.js --watch",
+    "dev:build:server": "webpack --config webpack.server.js --watch",
+    "dev:build:client": "webpack --config webpack.client.js --watch",
     "dev": "npm-run-all --parallel dev:**"
   },
   "repository": {
@@ -33,6 +34,7 @@
     "react-dom": "^16.12.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
+    "webpack-merge": "^4.2.2",
     "webpack-node-externals": "^1.7.2"
   }
 }
